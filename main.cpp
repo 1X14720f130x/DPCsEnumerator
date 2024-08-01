@@ -173,7 +173,7 @@ NTSTATUS DriverDispatchControl( _In_ PDEVICE_OBJECT DeviceObject , _Inout_  PIRP
 
 PKDPC InsertQueueImportantDpc( DpcType Type ) 	{
 
-	// Allocate non-paged memory for the APC
+	// Allocate non-paged memory for the DPC
 	PKDPC Dpc = reinterpret_cast< PKDPC >( ExAllocatePoolWithTag( NonPagedPoolNx , sizeof( KDPC ) , 'FloF' ) );
 
 	if ( Dpc == NULL ) return Dpc;
